@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>MixMaster Mixer</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <div class="logo">🎛 MixMaster</div>
+        <div id="user-badge" class="badge"></div>
+      </header>
+      <main id="content" class="content">
+        <p class="loading">Загрузка микшера...</p>
+      </main>
+      <canvas id="waveform" class="waveform" height="80"></canvas>
+      <div class="controls">
+        <button type="button" id="play-btn" class="btn secondary">▶ Слушать</button>
+      </div>
+      <p id="play-hint" class="hint">Нажмите «Слушать» для превью</p>
+      <p class="hint">Сохранение — кнопка Telegram внизу экрана</p>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

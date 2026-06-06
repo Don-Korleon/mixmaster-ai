@@ -1,0 +1,11 @@
+node_modules
+webapp/node_modules
+dist
+webapp/dist
+data
+uploads
+.env
+.git
+*.md
+!README.md
+.cursor

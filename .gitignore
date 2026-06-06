@@ -1,0 +1,9 @@
+node_modules/
+dist/
+webapp/dist/
+public/webapp/
+.env
+data/
+uploads/
+*.db
+.DS_Store
