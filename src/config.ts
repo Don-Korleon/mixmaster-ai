@@ -14,7 +14,7 @@ export const config = {
   botToken: process.env.BOT_TOKEN ?? "",
   botUsername: process.env.BOT_USERNAME ?? "mixmaster_ai",
   webhookSecret: process.env.WEBHOOK_SECRET ?? "dev-secret",
-  publicUrl: (process.env.PUBLIC_URL ?? vercelHttps || "http://localhost:3000").replace(/\/$/, ""),
+  publicUrl: (process.env.PUBLIC_URL ?? (vercelHttps || "http://localhost:3000")).replace(/\/$/, ""),
   port: Number(process.env.PORT ?? 3000),
   nodeEnv: process.env.NODE_ENV ?? "development",
   useWebhook: process.env.USE_WEBHOOK === "true" || isVercel,
