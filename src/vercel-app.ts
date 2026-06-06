@@ -6,7 +6,7 @@ import { webhookCallback } from "grammy";
 import { createBot, initBot } from "./bot/index.js";
 import { config } from "./config.js";
 import { createServer } from "./server/index.js";
-import { getPreviewAudioBuffer } from "./services/previewAudio.js";
+import { warmPreviewAudioCache } from "./services/previewAudio.js";
 
 const app = createServer();
 
@@ -18,7 +18,7 @@ async function ensureBot(): Promise<void> {
     botReady = (async () => {
       fs.mkdirSync(config.uploadsDir, { recursive: true });
       fs.mkdirSync(config.dataDir, { recursive: true });
-      getPreviewAudioBuffer().catch(() => {});
+      warmPreviewAudioCache().catch(() => {});
 
       const bot = createBot();
       await initBot(bot);

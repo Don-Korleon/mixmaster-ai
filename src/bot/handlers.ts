@@ -41,7 +41,7 @@ async function sendRemixAudio(
   ctx: Context,
   remix: NonNullable<ReturnType<typeof getRemix>>
 ): Promise<void> {
-  const buffer = await getPreviewAudioBuffer();
+  const buffer = await getPreviewAudioBuffer(remix.style_id);
   await ctx.replyWithAudio(new InputFile(buffer, `${remix.id}.mp3`), {
     title: remix.track_title,
     performer: remix.track_artist,

@@ -3,13 +3,13 @@ import { webhookCallback } from "grammy";
 import { config } from "./config.js";
 import { createBot, initBot } from "./bot/index.js";
 import { createServer } from "./server/index.js";
-import { getPreviewAudioBuffer } from "./services/previewAudio.js";
+import { warmPreviewAudioCache } from "./services/previewAudio.js";
 
 async function main(): Promise<void> {
   fs.mkdirSync(config.uploadsDir, { recursive: true });
   fs.mkdirSync(config.dataDir, { recursive: true });
 
-  getPreviewAudioBuffer().catch((err) =>
+  warmPreviewAudioCache().catch((err) =>
     console.warn("[preview] demo audio preload failed:", err)
   );
 

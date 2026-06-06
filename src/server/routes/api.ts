@@ -55,7 +55,7 @@ apiRouter.get("/remix/:id/preview", async (req, res) => {
     return;
   }
   try {
-    const audio = await getPreviewAudioBuffer();
+    const audio = await getPreviewAudioBuffer(remix.style_id);
     res.setHeader("Content-Type", "audio/mpeg");
     res.setHeader("Content-Length", audio.length);
     res.setHeader("Accept-Ranges", "bytes");
